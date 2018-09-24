@@ -18,7 +18,7 @@ it can be used for fancy effects later */
 }
 
 /* positioning the main div for the landing page */
-.main{
+.main, main1{
     z-index: 2;
     display: flex;
     flex-flow: column wrap;

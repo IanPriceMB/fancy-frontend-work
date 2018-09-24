@@ -6,21 +6,15 @@ $(document).ready(function(){
     landingTitleAnimation();
     
     //on click of start button fade out main so it's only canvas for the portal animation
-    $('#startButton').on('click', function(){
-        $('startButton').attr('disabled', 'disabled');
-        //fade out main on click
-        document.getElementById('main').className='main1';
-        //when the fade is completed remove main so that just the animations are showing
-        setTimeout(function(){ 
-            $('#main').remove();
-        }, 3000);
+    $('body').on('click', '#startButton', function(){
+        //delete main for the tundercrash
+        $('#main').remove();
+        //canvas animations
+
+        //call the portal animation
+
+        //on end of the portal animation call new div
     });
-
-    //call the portal animation
-
-    //on end of the portal animation call new div
-
-
 });
 
 // a special function for timing out some fades and sounds
@@ -41,12 +35,13 @@ function landingTitleAnimation() {
     //replace title with button
     setTimeout(function(){ 
         $('#initialTitle').remove()
-        $('#main').append('<button class="firstButton1" id="startButton">')
-        $('#startButton').html("Show me the way <br> I want into the Abyss")
+        $('#main').append('<button class="firstButton1" id="startButton">');
+        $('#startButton').html("Show me the way<br> I want into the Abyss");
     }, 13000);
     //fade the button in
     setTimeout(function(){ 
         document.getElementById('startButton').className='firstButton';
+        //also must add in fades for sign in later
     }, 13005);
-}
+};
 

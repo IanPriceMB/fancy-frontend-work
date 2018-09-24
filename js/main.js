@@ -3,9 +3,18 @@
 //can't split without having a back end which I don't wish to imlement at this time
 $(document).ready(function(){
     //this will eventually be called on load of all sound bites
-    landingTextFader();
-
+    landingTitleAnimation();
+    
     //on click of start button fade out main so it's only canvas for the portal animation
+    $('#startButton').on('click', function(){
+        $('startButton').attr('disabled', 'disabled');
+        //fade out main on click
+        document.getElementById('main').className='main1';
+        //when the fade is completed remove main so that just the animations are showing
+        setTimeout(function(){ 
+            $('#main').remove();
+        }, 3000);
+    });
 
     //call the portal animation
 
@@ -15,7 +24,7 @@ $(document).ready(function(){
 });
 
 // a special function for timing out some fades and sounds
-function landingTextFader() {
+function landingTitleAnimation() {
     //fade out the title
     setTimeout(function(){ 
         document.getElementById('initialTitle').className='initialTitle1';
@@ -24,27 +33,20 @@ function landingTextFader() {
     setTimeout(function(){ 
         $('#initialTitle').text('are you ready?')
         document.getElementById('initialTitle').className='initialTitle';
-    }, 4500);
-    //fade in the button
+    }, 6000);
+    //fade the title out again
+    setTimeout(function(){ 
+        document.getElementById('initialTitle').className='initialTitle1';
+    }, 10000);
+    //replace title with button
+    setTimeout(function(){ 
+        $('#initialTitle').remove()
+        $('#main').append('<button class="firstButton1" id="startButton">')
+        $('#startButton').html("Show me the way <br> I want into the Abyss")
+    }, 13000);
+    //fade the button in
     setTimeout(function(){ 
         document.getElementById('startButton').className='firstButton';
-        document.getElementById('initialTitle').className='initialTitle2';
-    }, 7000);
-    //stager the title and the button & start the 'breathing' 
-    setTimeout(function(){ 
-        breathing();
-    }, 8500);
+    }, 13005);
 }
-function breathing() {
-    setInterval(function(){
-        var el = document.querySelector('h1.initialTitle2')
-        if (el) {
-            el.className = "initialTitle3";
-        } 
-        else {
-            el = document.querySelector('h1.initialTitle3')
-            el.className = "initialTitle2";
-        }
-        return el;
-    }, 2500);
-}
+

@@ -17,12 +17,6 @@ it can be used for fancy effects later */
     position: fixed;
 }
 
-/* general stylng for all buttons */
-.button{
-    border: white 3px solid;
-    border-radius: 10px;
-}
-
 /* positioning the main div for the landing page */
 .main{
     z-index: 2;
@@ -40,50 +34,20 @@ it can be used for fancy effects later */
 }
 
 /* some styling for the initial title */
-.initialTitle{
+.initialTitle, .initialTitle1, .initialTitle2, .initialTitle3{
     /* top right bottom left */
-    font-size: 5em;
+    font-size: 3em;
     margin: 0;
+}
 
-    opacity: 1;
-    -webkit-transition-property: opacity;
-    -webkit-transition-duration: 2.5s;
-    -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition-property: opacity;
-    transition-duration: 2.5s;
-    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.initialTitle1{
-    /* top right bottom left */
-    font-size: 5em;
-    margin: 0;
-    opacity: 0;
-    -webkit-transition-property: opacity;
-    -webkit-transition-duration: 1s;
-    -webkit-transition-timing-function: ease;
-    transition-property: opacity;
-    transition-duration: 1s;
-    transition-timing-function: ease;
-}
-/* some styling for the initial button */
-.firstButton{
+.firstButton, .firstButton1{
     font-size: 3em;
     color: white;
-    background: black;
-    opacity: 1;
-
-    -webkit-transition-property: opacity;
-    -webkit-transition-duration: 2.5s;
-    -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition-property: opacity;
-    transition-duration: 2.5s;
-    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    background: black;    
+    border: white 3px solid;
+    border-radius: 10px;
 }
-
 .firstButton1{
-    font-size: 3em;
-    color: white;
-    background: black;
     opacity: 0;
 }
 
